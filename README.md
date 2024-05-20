@@ -1,7 +1,5 @@
 # ChatGPT Test
 
-***still writing more, just pushing so it's not just blank
-
 Testing if ChatGPT prototypes, or if it generates LLM salad.
 
 The goal was to prototype [FlashSwarm](https://github.com/394-s24/FlashSwarm) within an hour of time.

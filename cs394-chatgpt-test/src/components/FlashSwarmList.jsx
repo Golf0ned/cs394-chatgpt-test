@@ -10,7 +10,10 @@ const FlashSwarmList = () => {
       <ul>
         {state.swarms.map((swarm, index) => (
           <li key={index}>
-            {swarm.name} - {swarm.duration} hours
+            <strong>{swarm.name}</strong><br />
+            Start: {new Date(swarm.startTime).toLocaleString()}<br />
+            End: {new Date(swarm.endTime).toLocaleString()}<br />
+            Zoom Link: <a href={swarm.zoomLink} target="_blank" rel="noopener noreferrer">{swarm.zoomLink}</a>
           </li>
         ))}
       </ul>

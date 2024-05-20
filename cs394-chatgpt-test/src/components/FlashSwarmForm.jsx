@@ -3,9 +3,16 @@ import { AppContext } from '../context/AppContext';
 
 const FlashSwarmForm = () => {
   const { dispatch } = useContext(AppContext);
+
+  // Get current time and one hour ahead
+  const now = new Date();
+  const defaultEndTime = new Date(now.getTime() + 60 * 60 * 1000);
+
   const [formData, setFormData] = useState({
     name: '',
-    duration: 0,
+    startTime: now.toISOString().slice(0, 16),
+    endTime: defaultEndTime.toISOString().slice(0, 16),
+    zoomLink: '', // Default value for Zoom link
   });
 
   const handleChange = (e) => {
@@ -16,7 +23,7 @@ const FlashSwarmForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch({ type: 'ADD_SWARM', payload: formData });
-    setFormData({ name: '', duration: 0 });
+    setFormData({ name: '', startTime: '', endTime: '', zoomLink: '' }); // Reset form fields
   };
 
   return (
@@ -33,14 +40,36 @@ const FlashSwarmForm = () => {
         />
       </div>
       <div>
-        <label htmlFor="duration">Duration (hours):</label>
+        <label htmlFor="startTime">Start Time:</label>
         <input
-          type="number"
-          id="duration"
-          name="duration"
-          value={formData.duration}
+          type="datetime-local"
+          id="startTime"
+          name="startTime"
+          value={formData.startTime}
           onChange={handleChange}
           required
+        />
+      </div>
+      <div>
+        <label htmlFor="endTime">End Time:</label>
+        <input
+          type="datetime-local"
+          id="endTime"
+          name="endTime"
+          value={formData.endTime}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div>
+        <label htmlFor="zoomLink">Zoom Link:</label>
+        <input
+          type="url"
+          id="zoomLink"
+          name="zoomLink"
+          value={formData.zoomLink}
+          onChange={handleChange}
+          placeholder="https://zoom.us/j/1234567890"
         />
       </div>
       <button type="submit">Create Flash Swarm</button>

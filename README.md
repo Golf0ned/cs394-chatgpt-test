@@ -17,6 +17,8 @@ Assume the most recent version of react.js. The vite project has already been ma
 
 From here, minor debugging questions were asked to get it to generate something functional. Afterwards, I asked for individual features prompt by prompt.
 
+Full chat log: https://chatgpt.com/share/e2ee7398-e835-49d3-94d8-c43da958783e
+
 ## Questions
 ### Does the code work? If not, what's broken.
 It works. As in, it's a functional frontend. It's not hooked up to Firebase or any permanent data store, though.

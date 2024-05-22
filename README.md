@@ -19,7 +19,10 @@ From here, minor debugging questions were asked to get it to generate something 
 
 Full chat log: https://chatgpt.com/share/e2ee7398-e835-49d3-94d8-c43da958783e
 
-## Questions
+## Results
+
+![image](https://github.com/Golf0ned/cs394-chatgpt-test/assets/60253050/19a716d4-4df2-4e47-9487-adba760fe0e7)
+
 ### Does the code work? If not, what's broken.
 It works. As in, it's a functional frontend. It's not hooked up to Firebase or any permanent data store, though.
 ### How is the code better than what the team currently has?
